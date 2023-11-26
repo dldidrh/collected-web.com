@@ -1,0 +1,203 @@
+*{box-sizing: border-box;}
+
+html, body {
+    padding: 0;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom:20px;
+    cursor:url(mouse.png), 20 20;
+    position:relative;
+  }
+
+
+ #capture { 
+  display: inline-block;
+  color: #ffffff;
+  margin-top:-7px;
+  
+} 
+
+
+
+/* 비디오감싸는흰박스 */
+.canvas-container {
+
+  display: inline-block;
+  background-color: #f6f6f6;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 1); 
+  border-radius: 30px; 
+  overflow: hidden; 
+}
+
+/* 이미지 저장시 뜨는 텍스트 */
+#captureInfo{
+  font-family: "paybooc-Light", sans-serif;
+  font-weight: 400;
+  margin-bottom:5px;
+  color:black;
+  font-size: 15px;
+}
+
+/* 뒷배경 */
+.background {
+  background-image: url('back3.jpg');
+  background-size: cover;
+  width: 100%; 
+  height: 100vh;
+  position: fixed; 
+  top:0;
+  left: 0; 
+  z-index: -5;
+  mask-image: radial-gradient(circle at center, black 1%, transparent 75%);
+}
+
+
+/* 뒷배경에 나열된 이미지들 */
+#savedImage{
+  width: 400px;
+  height:290px;
+  /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);  */
+  margin: 0px 0px 20px -30px;
+  border-radius: 30px;
+  
+  /* float:left; */
+  /* clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  ); */
+  animation: scale 5s linear infinite;
+  opacity:0.7;
+
+}
+ 
+@keyframes scale {
+  0% {
+    transform: scale(1) rotate(-18.5deg);;
+  }
+  50% { 
+    transform: scale(1) rotate(-18.5deg);;
+  }
+  100% {
+    transform: scale(1) rotate(-18.5deg);;
+  }
+  
+}
+  
+
+
+/* 카메라버튼1 */
+#image1 {
+  width:60px;
+  height:60px;
+  position:relative;
+  cursor:pointer;
+  animation: rotate 1s  infinite; 
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate( -45deg );
+  }
+
+  100% {
+    transform: rotate( 90deg );
+  }
+}
+
+
+/* 카메라버튼2 */
+#image2 {
+  width:60px;
+  height:60px;
+  position:absolute;
+  display:none;
+  margin-top:-65px;
+  cursor:pointer;
+ 
+}
+
+/* 카메라호버시이미지 */
+#capture:hover #image2 {
+  display:block;
+  
+}
+
+/* EVENT버튼 */
+a:link {
+  
+  cursor:pointer;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 420px;
+  text-align: center;
+  padding:3px 10px;
+  border-radius: 20px;
+  background-color:rgb(0, 0, 0);
+  color:rgb(255, 252, 252);
+  font-family: "paybooc-Light", sans-serif;
+  font-weight: 600;
+  top:755px;
+  position:absolute;
+  cursor:pointer;
+
+
+}
+
+
+/* DRAG&CLICK 텍스트 */
+p {
+  position: absolute;
+  top:4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight:800;
+  font-size:50px;
+  color:#00ff00;
+  animation: blink 0.5s infinite;
+  
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+/* 리셋버튼 */
+#reset{
+  font-size: 14px;
+  cursor:pointer;
+  position:absolute;
+  margin-left:8px;
+  top:755px;
+  text-align: center;
+  padding:3px 10px;
+  border-radius: 20px;
+  background-color:rgb(4, 255, 0);
+  color:rgb(255, 255, 255);
+  font-family: "paybooc-Light", sans-serif;
+  font-weight: 600;
+  cursor:pointer;
+  
+}
+
+
